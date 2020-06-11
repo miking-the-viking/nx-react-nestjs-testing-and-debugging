@@ -6,11 +6,12 @@ module.exports = {
     resolver: '@nrwl/jest/plugins/resolver',
     moduleFileExtensions: ['ts', 'js', 'html'],
     coverageReporters: ['html', 'lcov', 'text'],
+    coveragePathIgnorePatterns: ['svg'],
     coverageThreshold: {
         global: {
-            branches: 80,
-            functions: 80,
-            lines: 80,
+            branches: 70,
+            functions: 70,
+            lines: 70,
             statements: -40
         }
     }

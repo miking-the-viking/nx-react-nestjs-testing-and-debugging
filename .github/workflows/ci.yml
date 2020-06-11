@@ -1,0 +1,40 @@
+name: ci
+on:
+    pull_request:
+        paths-ignore:
+            - '**/*.md'
+            - '.eslintrc'
+            - '.env.example'
+            - '.editorconfig'
+            - '.vscode'
+jobs:
+    Lint-and-Test-Api:
+        runs-on: ubuntu-latest
+        steps:
+            - uses: actions/checkout@v2
+            - uses: bahmutov/npm-install@v1
+            - name: api Passes Lint Check
+              run: yarn lint api
+            - name: Test api
+              run: yarn api:coverage
+            - name: Report api coverage
+              uses: romeovs/lcov-reporter-action@v0.2.16
+              with:
+                  github-token: ${{ secrets.CI_TOKEN }}
+                  lcov-file: ./coverage/apps/api/lcov.info
+    Lint-and-Test-Web:
+        runs-on: ubuntu-latest
+        steps:
+            - uses: actions/checkout@v2
+            - uses: bahmutov/npm-install@v1
+            - name: web Passes Lint Check
+              run: yarn lint web
+            - name: web e2e tests pass
+              run: yarn e2e web-e2e
+            - name: Test web
+              run: yarn web:coverage
+            - name: Report web coverage
+              uses: romeovs/lcov-reporter-action@v0.2.16
+              with:
+                  github-token: ${{ secrets.CI_TOKEN }}
+                  lcov-file: ./coverage/apps/web/lcov.info
