@@ -23,7 +23,9 @@
         "update": "nx migrate latest",
         "workspace-schematic": "nx workspace-schematic",
         "dep-graph": "nx dep-graph",
-        "help": "nx help"
+        "help": "nx help",
+        "api:coverage": "nx test api --code-coverage --no-cache",
+        "api:debug": "nx serve api --port 4234"
     },
     "private": true,
     "dependencies": {
