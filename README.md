@@ -1,5 +1,7 @@
 # RxReactNestjsTestingAndDebugging
 
+![ci](https://github.com/miking-the-viking/nx-react-nestjs-testing-and-debugging/workflows/ci/badge.svg)
+
 > A dive into testing and debugging React and NestJs in an Nx Workspace.
 
 This application is setup to demonstrated some core concepts to testing and debugging a fullstack monorepository TypeScript application (React and NestJs).
@@ -58,6 +60,18 @@ These features must all be thoroughly tested.
 ## Libraries
 
 ## Tools
+
+# Best Practices
+
+## Continuous Integration
+
+The CI pipeline uses GitHub Actions to execute all the necessary basic steps/checks on the given pull request before it can be merged.
+
+Refer to `.github/workflows/ci.yml` for reference.
+
+Using a custom GitHub Access Token on a valid user's behalf can be used in te reporting action to comment the coverage report on the related PR.
+
+This also allows for you to get this sweet ass badge! ![ci](https://github.com/miking-the-viking/nx-react-nestjs-testing-and-debugging/workflows/ci/badge.svg)
 
 # [Nx](https://nx.dev).
 
