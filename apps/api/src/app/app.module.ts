@@ -8,7 +8,7 @@ import { join } from 'path';
 @Module({
     imports: [
         GraphQLModule.forRoot({
-            autoSchemaFile: join(process.cwd(), 'src/schema.gql'),
+            autoSchemaFile: join(process.cwd(), 'apps/api/src/schema.gql'),
             // resolvers: { JSON: GraphQLJSON },
             debug: true,
             playground: true,
