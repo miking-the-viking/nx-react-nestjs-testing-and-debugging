@@ -2,6 +2,22 @@
 # THIS FILE WAS AUTOMATICALLY GENERATED (DO NOT MODIFY)
 # ------------------------------------------------------
 
+type Auth {
+  """JWT Bearer token"""
+  token: String!
+  user: User!
+}
+
+input LoginInput {
+  email: String!
+  password: String!
+}
+
+type Mutation {
+  signup(data: SignupInput!): Auth!
+  login(data: LoginInput!): Auth!
+}
+
 """Office Location"""
 enum Office {
   FC
@@ -10,7 +26,19 @@ enum Office {
 }
 
 type Query {
+  me: User!
   TeamMemberById(id: String!, office: Office!): TeamMember!
+}
+
+"""User role"""
+enum Role {
+  ADMIN
+  USER
+}
+
+input SignupInput {
+  email: String!
+  password: String!
 }
 
 """
@@ -32,4 +60,13 @@ type TeamMember {
 
   """Their favourite color"""
   favouriteColour: String
+}
+
+type User {
+  id: String!
+  created_at: String!
+  updated_at: String!
+  email: String!
+  password: String!
+  role: Role!
 }

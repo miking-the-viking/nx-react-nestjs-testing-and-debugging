@@ -1,5 +1,5 @@
 import { Module } from '@nestjs/common';
-
+import { AuthModule } from '@king/api-authentication';
 import { AppController } from './app.controller';
 import { AppService } from './app.service';
 import { VehiklModule } from './vehikl/vehikl.module';
@@ -15,6 +15,7 @@ import { join } from 'path';
             context: ({ req }) => ({ req }),
             installSubscriptionHandlers: false
         }),
+        AuthModule,
         VehiklModule
     ],
     controllers: [AppController],

@@ -7,6 +7,8 @@ import star from './star.svg';
 
 import { Route, Link } from 'react-router-dom';
 
+import { UiComponents } from '@king/ui-components';
+
 export const App = () => {
     useEffect(() => {
         console.log('effect!');
@@ -120,6 +122,9 @@ nx affected:e2e
                         <Link to="/">Home</Link>
                     </li>
                     <li>
+                        <Link to="/ui-components">UiComponents</Link>
+                    </li>
+                    <li>
                         <Link to="/page-2">Page 2</Link>
                     </li>
                 </ul>
@@ -134,6 +139,7 @@ nx affected:e2e
                     </div>
                 )}
             />
+            <Route path="/ui-components" component={UiComponents} />
             <Route
                 path="/page-2"
                 exact

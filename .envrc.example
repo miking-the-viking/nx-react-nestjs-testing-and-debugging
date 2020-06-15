@@ -1,0 +1,19 @@
+export CI_TOKEN=fdsafdsafds
+
+
+# Database
+export DB_USER=hasura
+export DB_PASSWORD=password
+export DB_HOST=postgres
+export DB_PORT=5432
+export DB_NAME=kwjs
+
+
+# Hasura
+
+export HASURA_GRAPHQL_DATABASE_URL=postgres://${DB_USER}:${DB_PASSWORD}@${DB_HOST}:${DB_PORT}/${DB_NAME}
+export HASURA_GRAPHQL_ENABLE_CONSOLE=true
+export HASURA_GRAPHQL_ENABLED_LOG_TYPES='startup, http-log, webhook-log, websocket-log, query-log'
+export HASURA_GRAPHQL_MIGRATIONS_DIR=$PWD/hasura/migrations
+export HASURA_PORT=8081
+export HASURA_ENDPOINT=http://localhost:8081/v1/graphql
