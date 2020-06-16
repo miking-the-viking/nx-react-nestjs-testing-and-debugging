@@ -1,21 +1,33 @@
 {
-  "compileOnSave": false,
-  "compilerOptions": {
-    "rootDir": ".",
-    "sourceMap": true,
-    "declaration": false,
-    "moduleResolution": "node",
-    "emitDecoratorMetadata": true,
-    "experimentalDecorators": true,
-    "importHelpers": true,
-    "target": "es2015",
-    "module": "esnext",
-    "typeRoots": ["node_modules/@types"],
-    "lib": ["es2017", "dom"],
-    "skipLibCheck": true,
-    "skipDefaultLibCheck": true,
-    "baseUrl": ".",
-    "paths": {}
-  },
-  "exclude": ["node_modules", "tmp"]
+    "compileOnSave": false,
+    "compilerOptions": {
+        "rootDir": ".",
+        "sourceMap": true,
+        "declaration": false,
+        "moduleResolution": "node",
+        "emitDecoratorMetadata": true,
+        "experimentalDecorators": true,
+        "importHelpers": true,
+        "target": "es2015",
+        "module": "esnext",
+        "typeRoots": ["node_modules/@types"],
+        "lib": ["es2017", "dom"],
+        "skipLibCheck": true,
+        "skipDefaultLibCheck": true,
+        "baseUrl": ".",
+        "paths": {
+            "@kwjs/ui-components": ["libs/ui-components/src/index.ts"],
+            "@kwjs/ui-state": ["libs/ui-state/src/index.ts"],
+            "@kwjs/api-authentication": [
+                "libs/api-authentication/src/index.ts"
+            ],
+            "@kwjs/data": ["libs/data/src/index.ts"],
+            "@kwjs/hasura": ["graphql/hasura/generated/hasura-graphql.ts"],
+            "@kwjs/api": ["graphql/api/generated/api-graphql.ts"],
+            "@kwjs/hooks-api": ["graphql/api/hooks/types.tsx"],
+            "@kwjs/route-manager": ["libs/route-manager/src/index.ts"],
+            "@kwjs/test-entity-tracker": ["./utilities/index.ts"]
+        }
+    },
+    "exclude": ["node_modules", "tmp"]
 }

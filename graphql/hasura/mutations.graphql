@@ -1,0 +1,32 @@
+#
+#
+# User
+#
+#
+
+mutation CreateUser($email: String!, $role: String!, $password: String!) {
+    insert_users(objects: { email: $email, role: $role, password: $password }) {
+        affected_rows
+        returning {
+            ...coreHasuraUserFields
+        }
+    }
+}
+
+mutation DeleteUserById($id: uuid!) {
+    delete_users(where: { id: { _eq: $id } }) {
+        affected_rows
+        returning {
+            ...coreHasuraUserFields
+        }
+    }
+}
+
+mutation DeleteUserByEmail($email: String!) {
+    delete_users(where: { email: { _eq: $email } }) {
+        affected_rows
+        returning {
+            ...coreHasuraUserFields
+        }
+    }
+}

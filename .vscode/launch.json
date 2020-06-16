@@ -78,6 +78,22 @@
             ],
             "console": "integratedTerminal",
             "internalConsoleOptions": "neverOpen"
+        },
+        {
+            "type": "node",
+            "request": "launch",
+            "name": "API Authentication: Current Test",
+            "program": "${workspaceFolder}/node_modules/jest/bin/jest",
+            "args": [
+                "-i",
+                "--no-cache",
+                "--watchAll",
+                "--codeCoverage=false",
+                "${fileBasenameNoExtension}",
+                "--config=${workspaceFolder}/libs/api-authentication/jest.config.js"
+            ],
+            "console": "integratedTerminal",
+            "internalConsoleOptions": "neverOpen"
         }
     ]
 }
