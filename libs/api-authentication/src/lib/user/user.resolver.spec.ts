@@ -4,22 +4,19 @@ import { AuthModule } from '../auth/auth.module';
 
 import { UserResolver } from './user.resolver';
 import { UserService } from './user.service';
+import { Role } from '@kwjs/data';
+import { User } from '@kwjs/api';
 // import { User, Role } from '@game-of-git/data-clients';
 
 const userServiceMock = jest.genMockFromModule<UserService>('./user.service');
 
 const fakeUserResult: User & { password: string } = {
     id: faker.random.uuid(),
-    name: faker.name.firstName(),
     email: faker.internet.email(),
     password: faker.random.word(),
     role: faker.random.arrayElement([Role.ADMIN, Role.USER]),
-    api_keys: [],
     created_at: new Date().toISOString(),
-    updated_at: new Date().toISOString(),
-    repositories: [],
-    provider_users: []
-    // games: []
+    updated_at: new Date().toISOString()
 };
 
 describe('UserResolver', () => {
@@ -27,13 +24,8 @@ describe('UserResolver', () => {
 
     beforeEach(async () => {
         const module: TestingModule = await Test.createTestingModule({
-            imports: [
-                AuthModule
-            ],
-            providers: [
-                UserResolver,
-                UserService
-            ]
+            imports: [AuthModule],
+            providers: [UserResolver, UserService]
         })
             .overrideProvider(UserService)
             .useValue(userServiceMock)

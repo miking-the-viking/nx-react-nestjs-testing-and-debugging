@@ -25,7 +25,8 @@
             "@kwjs/hasura": ["graphql/hasura/generated/hasura-graphql.ts"],
             "@kwjs/api": ["graphql/api/generated/api-graphql.ts"],
             "@kwjs/hooks-api": ["graphql/api/hooks/types.tsx"],
-            "@kwjs/route-manager": ["libs/route-manager/src/index.ts"]
+            "@kwjs/route-manager": ["libs/route-manager/src/index.ts"],
+            "@kwjs/test-entity-tracker": ["./utilities/index.ts"]
         }
     },
     "exclude": ["node_modules", "tmp"]

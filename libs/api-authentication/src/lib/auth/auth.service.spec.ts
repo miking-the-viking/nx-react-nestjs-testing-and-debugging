@@ -3,11 +3,11 @@ import {
     GraphqlModule,
     HasuraGqlClient,
     HasuraSdk
-} from '@game-of-git/data-clients';
+} from '@kwjs/data';
 import {
     createUserMutationVariableFactory,
     TestEntityTracker
-} from '@game-of-git/test-entity-tracker';
+} from '@kwjs/test-entity-tracker';
 import { JwtModule } from '@nestjs/jwt';
 import { Test, TestingModule } from '@nestjs/testing';
 import { decode, sign } from 'jsonwebtoken';
@@ -124,7 +124,6 @@ describe('Auth Service', () => {
             const jwtObject = decode(loginSuccess);
             // validate the existence and value of these keys
             expect(jwtObject['userId']).toEqual(user.id);
-            expect(jwtObject['apiKeys']).toHaveLength(0);
         });
     });
 

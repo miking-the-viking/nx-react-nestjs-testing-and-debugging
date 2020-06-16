@@ -5,11 +5,11 @@ import {
     GqlClient,
     HasuraGqlClient,
     HasuraSdk
-} from '@game-of-git/data-clients';
+} from '@kwjs/data';
 import {
     TestEntityTracker,
     createUserMutationVariableFactory
-} from '@game-of-git/test-entity-tracker';
+} from '@kwjs/test-entity-tracker';
 import { UserService } from './user.service';
 import { PasswordService } from '../auth';
 
